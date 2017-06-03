@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Filters</title>
+    <script src='bower_components/angular/angular.js'></script>
+    <script src="app.js"></script>
+</head>
+<body>
+  <input ng-model = "first_name" placeholder = "First Name">
+  <input ng-model = "last_name" placeholder = "Last Name">
+  <input ng-model = "age" placeholder = "Age">
+    <div ng-controller="myController">
+      <table>
+        <thead>
+          <tr>
+            <th> First Name</th>
+            <th> Last Name </th>
+            <th> Age </th>
+          </tr>
+      </thead>
+      <tbody ng-repeat = "user in users | filter: first_name | filter: last_name | filter: age">
+          <tr>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.age}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+
+</html>
